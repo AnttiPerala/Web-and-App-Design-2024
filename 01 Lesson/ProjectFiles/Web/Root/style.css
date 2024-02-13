@@ -3,6 +3,7 @@ body {
     background-color: coral;
     background-image: url(img/blurred2.jpg);
     background-size: cover;
+    font-family: 'Montserrat-Variable', sans-serif;
     
 }
 
@@ -62,4 +63,9 @@ main {
 
 footer {
     min-height: 20vh;
+}
+
+@font-face {
+    font-family: 'Montserrat-Variable';
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
 }
