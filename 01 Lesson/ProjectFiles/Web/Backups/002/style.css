@@ -3,7 +3,6 @@ body {
     background-color: coral;
     background-image: url(img/blurred2.jpg);
     background-size: cover;
-    
 }
 
 header {
@@ -12,37 +11,31 @@ header {
     justify-content: space-evenly;
 }
 
-header img {
-    width: 30%;
-}
-
 ul {
     list-style-type: none; /* Remove the round discs */
 }
 
 ul a {
     text-decoration: none; /* remove the underline */
-    color: white;
 }
-
-nav a:hover {
-    color: #8c7cf0;
-}
-
-
 
 nav li {
     display: inline-block; /* Make the links go next to each other horizontally */
     margin: 0.5rem;
-    
-}
-
-.horizontalFlip {
-    transform: scaleX(-1);
 }
 
 main {
     width: 40%;
+}
+
+aside {
+    margin-left: 10vw;
+    border: 4px black solid;
+    width: 40vw;
+}
+
+aside img {
+    transform: scaleX(-1);
 }
 
 footer {
