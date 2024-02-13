@@ -2,3 +2,30 @@ body {
     min-height: 97vh;
     background-color: coral;
 }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style-type: none; /* Remove the round discs */
+}
+
+ul a {
+    text-decoration: none; /* remove the underline */
+}
+
+nav li {
+    display: inline-block; /* Make the links go next to each other horizontally */
+    margin: 0.5rem;
+}
+
+main {
+    width: 40%;
+}
+
+footer {
+    min-height: 20vh;
+}
