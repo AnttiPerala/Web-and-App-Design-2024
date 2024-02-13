@@ -122,7 +122,9 @@ nav li {
 }
 
 .borderContainer {
-    border: 3px solid black;
+    /* border: 3px solid black; */
+    border-radius: 1rem;
+    background-color: #25252552;
 }
 
 main aside {
@@ -145,6 +147,7 @@ article {
 #robotHand {
     width: 130%;
     margin-top: 15vh;
+    filter: drop-shadow(0px 19px 22px #00000088);
 }
 
 main {
@@ -153,6 +156,11 @@ main {
 
 footer {
     min-height: 20vh;
+    background-color: #25252552;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @font-face {
