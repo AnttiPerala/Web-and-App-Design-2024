@@ -41,8 +41,23 @@ nav li {
     transform: scaleX(-1);
 }
 
+.borderContainer {
+    border: 3px solid black;
+}
+
+main aside {
+    width: 40vw;
+    min-height: 50vh;
+    margin: 5vw;
+}
+
+#robotHand {
+    width: 130%;
+    margin-top: 15vh;
+}
+
 main {
-    width: 40%;
+    display: flex;
 }
 
 footer {
