@@ -52,6 +52,17 @@ main aside {
     margin: 5vw;
 }
 
+article h1 {
+    font-size: 6rem;
+    color: #8c7cf0;
+    text-transform: capitalize;
+}
+
+article {
+    margin: 5vw;
+    width: 40vw;
+}
+
 #robotHand {
     width: 130%;
     margin-top: 15vh;
