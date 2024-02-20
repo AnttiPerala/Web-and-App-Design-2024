@@ -1,0 +1,43 @@
+body {
+    min-height: 97vh;
+    background-color: coral;
+    background-image: url(img/blurred2.jpg);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style-type: none; /* Remove the round discs */
+}
+
+ul a {
+    text-decoration: none; /* remove the underline */
+}
+
+nav li {
+    display: inline-block; /* Make the links go next to each other horizontally */
+    margin: 0.5rem;
+}
+
+main {
+    width: 40%;
+}
+
+aside {
+    margin-left: 10vw;
+    border: 4px black solid;
+    width: 40vw;
+}
+
+aside img {
+    transform: scaleX(-1);
+}
+
+footer {
+    min-height: 20vh;
+}

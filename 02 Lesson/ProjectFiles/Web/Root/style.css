@@ -1,0 +1,186 @@
+body {
+    min-height: 97vh;
+    background-color: coral;
+    background-image: url(img/blurred2.jpg);
+    background-size: cover;
+    font-family: 'Montserrat-Variable', sans-serif;
+    
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header img {
+    width: 30%;
+}
+
+ul {
+    list-style-type: none; /* Remove the round discs */
+}
+
+ul a {
+    text-decoration: none; /* remove the underline */
+    color: white;
+}
+
+nav a:hover {
+    color: #8c7cf0;
+}
+
+article a {
+    text-decoration: none;
+       
+}
+
+/* FORM STYLES */
+
+form#contactForm {
+    width: 40%;
+    padding: 2rem;
+    margin: 1rem auto;
+    color: white;
+}
+
+.form-group input,
+textarea {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-group {
+    margin: 0.5rem;
+}
+
+#contactForm h2 {
+    font-size: 2rem;
+}
+
+
+
+/* CSS */
+.button-29 {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.button-29:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-29:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+
+nav li {
+    display: inline-block; /* Make the links go next to each other horizontally */
+    margin: 0.5rem;
+    
+}
+
+.horizontalFlip {
+    transform: scaleX(-1);
+}
+
+.borderContainer {
+    /* border: 3px solid black; */
+    border-radius: 1rem;
+    background-color: #25252552;
+}
+
+main aside {
+    width: 25vw;
+    /* min-height: 50vh; */
+    margin: 5vw;
+    flex: 1 1 auto; /* Shorthand for flex-grow, flex-shrink, flex-basis */
+}
+
+.callToAction h1 {
+    font-size: clamp(2rem, 3vw, 10rem);
+    color: #8c7cf0;
+    text-transform: capitalize;
+}
+
+.callToAction {
+    margin: 5vw;
+    width: 40vw;
+    flex: 1 1 auto; /* Shorthand for flex-grow, flex-shrink, flex-basis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products {
+    width: 100%;
+    display: flex;
+}
+
+.products article {
+    border: 1px black solid;
+    width: 28vw;
+    aspect-ratio: 1;
+}
+
+#robotHand {
+    width: 130%;
+    margin-top: 15vh;
+    filter: drop-shadow(0px 19px 22px #00000088);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    min-height: 20vh;
+    background-color: #25252552;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'Montserrat-Variable';
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
