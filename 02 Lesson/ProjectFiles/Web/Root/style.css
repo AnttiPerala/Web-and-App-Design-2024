@@ -234,6 +234,12 @@ main aside {
     align-items: center;
     justify-content: center;
     flex: 1 1 auto;
+    transform: scale(0);
+    transition: transform 1s ease-in-out;
+}
+
+.products .scale-in {
+    transform: scale(1); /* Scales elements back to normal size */
 }
 
 #robotHand {
