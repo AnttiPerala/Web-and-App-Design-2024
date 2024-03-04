@@ -236,11 +236,13 @@ main aside {
     flex: 1 1 auto;
     transform: scale(0);
     transition: transform 1s ease-in-out;
+    color: #8c7cf0;
 }
 
 .products .scale-in {
     transform: scale(1); /* Scales elements back to normal size */
 }
+
 
 #robotHand {
     width: 130%;
@@ -266,3 +268,35 @@ footer {
     font-family: 'Montserrat-Variable';
     src: url(fonts/Montserrat-VariableFont_wght.ttf);
 }
+
+
+/* MOBILE STYLES */
+
+@media only screen and (max-width: 1000px) {
+
+    main, .products, header {
+            flex-direction: column;
+        }
+    
+    main aside {
+            width: 100%;
+            margin: 0.5vw;
+        }
+
+        #robotHand {
+            width: 90%;
+        }
+
+        .callToAction {
+            margin: 1vw;
+            width: 100%;
+        }
+
+        .products article {
+            width: 100%;
+            margin: 1vw;   
+        }
+    
+}
+
+/* END MOBILE STYLES */
