@@ -218,10 +218,14 @@ main aside {
 }
 
 .products {
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.products img {
+    width: 90%;
 }
 
 .products article {
@@ -253,6 +257,7 @@ main aside {
 main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 footer {
@@ -276,6 +281,7 @@ footer {
 
     main, .products, header {
             flex-direction: column;
+            align-items: center;
         }
     
     main aside {
