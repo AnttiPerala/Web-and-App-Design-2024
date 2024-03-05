@@ -226,6 +226,7 @@ main aside {
 
 .products img {
     width: 90%;
+    height: auto;
 }
 
 .products article {
