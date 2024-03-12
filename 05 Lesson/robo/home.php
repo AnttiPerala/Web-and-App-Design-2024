@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<!-- Home.php styles the blog roll -->
+
 <main>
 
     <?php
@@ -16,10 +18,10 @@
     //var_dump($posts);
 
     if ($posts) {
-        echo '<ul>';
+        echo '<ul class="blogRollList">';
         foreach ($posts as $post){
             setup_postdata($post);
-            echo '<li>' . get_the_title() . '</li>';
+            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
         }
         echo '</ul>';
     }

@@ -9,7 +9,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Montserrat-Variable', sans-serif;
-    
+
 }
 
 header {
@@ -25,11 +25,13 @@ header img {
 
 
 ul {
-    list-style-type: none; /* Remove the round discs */
+    list-style-type: none;
+    /* Remove the round discs */
 }
 
 ul a {
-    text-decoration: none; /* remove the underline */
+    text-decoration: none;
+    /* remove the underline */
     color: white;
 }
 
@@ -39,7 +41,7 @@ nav a:hover {
 
 article a {
     text-decoration: none;
-       
+
 }
 
 /* FORM STYLES */
@@ -119,12 +121,13 @@ textarea {
 
 
 nav li {
-    display: inline-block; /* Make the links go next to each other horizontally */
+    display: inline-block;
+    /* Make the links go next to each other horizontally */
     margin: 0.5rem;
     transform: translateY(-250px);
     animation: slideIn 0.5s;
     animation-fill-mode: forwards;
-    
+
 }
 
 @keyframes slideIn {
@@ -137,7 +140,7 @@ nav li {
     }
 }
 
-nav li:nth-child(2){
+nav li:nth-child(2) {
     animation-delay: 0.2s;
 }
 
@@ -195,11 +198,12 @@ SASS version would look like this:
     background-color: #25252552;
 }
 
-main aside {
+main .borderContainer {
     width: 25vw;
     /* min-height: 50vh; */
     margin: 5vw;
-    flex: 1 1 auto; /* Shorthand for flex-grow, flex-shrink, flex-basis */
+    flex: 1 1 auto;
+    /* Shorthand for flex-grow, flex-shrink, flex-basis */
 }
 
 .callToAction h1 {
@@ -211,7 +215,8 @@ main aside {
 .callToAction {
     margin: 5vw;
     width: 40vw;
-    flex: 1 1 auto; /* Shorthand for flex-grow, flex-shrink, flex-basis */
+    flex: 1 1 auto;
+    /* Shorthand for flex-grow, flex-shrink, flex-basis */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -245,7 +250,8 @@ main aside {
 }
 
 .products .scale-in {
-    transform: scale(1); /* Scales elements back to normal size */
+    transform: scale(1);
+    /* Scales elements back to normal size */
 }
 
 
@@ -255,20 +261,48 @@ main aside {
     filter: drop-shadow(0px 19px 22px #00000088);
 }
 
+
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: #ddd;
+    min-height: 65vh;
 }
 
-.mainsection h1, .mainsection h2 {
+
+.mainsection h1,
+.mainsection h2 {
     color: #8c7cf0;
 }
 
 .mainsection {
     width: 70vw;
     margin: 3rem;
+}
+
+.blogRollList li {
+    margin: 2rem;
+}
+
+.singleSection{
+    width: 50vw;
+}
+
+.sidebar {
+    width: 25vw;
+    margin: 1rem;
+    margin-left: 5vw;
+    padding: 1rem 2rem;
+    background-color: #25252552;
+}
+
+.sidebar li {
+    list-style-type: none;
+}
+
+.sidebar .wp-block-heading {
+    color: #8c7cf0;
 }
 
 footer {
@@ -290,30 +324,32 @@ footer {
 
 @media only screen and (max-width: 1000px) {
 
-    main, .products, header {
-            flex-direction: column;
-            align-items: center;
-        }
-    
+    main,
+    .products,
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
     main aside {
-            width: 100%;
-            margin: 0.5vw;
-        }
+        width: 100%;
+        margin: 0.5vw;
+    }
 
-        #robotHand {
-            width: 90%;
-        }
+    #robotHand {
+        width: 90%;
+    }
 
-        .callToAction {
-            margin: 1vw;
-            width: 100%;
-        }
+    .callToAction {
+        margin: 1vw;
+        width: 100%;
+    }
 
-        .products article {
-            width: 100%;
-            margin: 1vw;   
-        }
-    
+    .products article {
+        width: 100%;
+        margin: 1vw;
+    }
+
 }
 
 /* END MOBILE STYLES */
