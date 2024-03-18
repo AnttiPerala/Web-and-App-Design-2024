@@ -300,7 +300,7 @@ main {
     margin: 2rem;
 }
 
-.singleSection{
+.singleSection, .categorySection{
     width: 50vw;
 }
 

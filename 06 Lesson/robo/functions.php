@@ -45,8 +45,48 @@ add_action('after_setup_theme', 'custom_logo_setup');
 
 function customize_register($wp_customize){
     //all our customization code will go here
+
+    $wp_customize->add_section('robo_color_settings', array(
+        'title' => __('Color settings', 'robo'), 
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('h1_color', array(
+        'default' => '#8c7cf0',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'h1_color', array(
+        'label' =>  __('H1 Color', 'robo'),
+        'section' => 'robo_color_settings',
+        'settings' => 'h1_color',
+    )));
+
+
 }
 
 add_action('customize_register', 'customize_register');
 
-wp_enqueue_script('robo-customizer', get_template_directory_uri() . '/js/mycustomizer.js'):
+function customizer_script(){
+    //arguments: script name, script path, dependencies, version number, load in footer
+    wp_enqueue_script('robo-customizer', get_template_directory_uri() . '/js/mycustomizer.js', array('customize-preview'), '', true);
+}
+
+
+wp_enqueue_script('robo-scroll', get_template_directory_uri() . '/js/scroll.js', '', '', true);
+
+add_action('customize_preview_init', 'customizer_script');
+
+
+function customize_css(){
+    ?>
+    <style type="text/css">
+        h1, h2 {color: <?php echo get_theme_mod('h1_color', '#8c7cf0'); ?>!important;}
+    </style>
+
+    <?php
+
+}
+
+add_action('wp_head', 'customize_css');
