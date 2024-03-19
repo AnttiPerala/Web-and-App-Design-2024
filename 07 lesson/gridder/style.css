@@ -40,6 +40,10 @@ html, body, div, span, applet, object,
         margin: 4rem 0;
     }
 
+    p {
+        margin: 2rem 0;
+    }
+
     @font-face {
         font-family: 'SairaSemiCondensedExtraBold';
         src: url('fonts/SairaSemiCondensed-ExtraBold.ttf');
