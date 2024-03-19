@@ -41,6 +41,7 @@ html, body, button, div, span, applet, object,
         font-size: 2rem;
         margin: 4rem 0;
         margin-bottom: 2rem;
+        text-align: left;
     }
 
     p {
@@ -70,8 +71,20 @@ header {
     background-image: url(img/crypto_bg-transformed.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 50vh;
+    min-height: 76vh;
     background-blend-mode: darken;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
 }
 
 .branding {
@@ -87,6 +100,7 @@ header {
     grid-column-end: 10;
     background-color: var(--primary-color);
     text-align: center;
+    margin-top: -20vh;
    
 }
 
@@ -98,6 +112,7 @@ section {
     grid-template-columns: repeat(8, 1fr);
     gap: 2px; 
     grid-column: 3 / 11; /* Shorthand for grid-column-start: 3 and grid-column-end: 11 */
+    text-align: justify;
 }
 
 section img {
@@ -122,18 +137,30 @@ footer {
     min-height: 20vh;
     grid-column: span 12;
     margin: 4rem 0;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: var(--primary-color);
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
+
     
+}
+
+.left{
+    grid-column: 4 / 7;
+}
+
+.right{
+    grid-column: 7 / 10;
+    text-align: right;
 }
 
 /* Buttons */
 
 button.recommended {
-    width: 20%;
+    min-width: 10rem;
     padding: 0.7rem;
     background-color: white;
     margin: 1rem;
@@ -141,7 +168,7 @@ button.recommended {
 }
 
 button.not-recommended {
-    width: 20%;
+    min-width: 10rem;
     padding: 0.7rem;
     margin: 1rem;
     border: 1px white solid;
