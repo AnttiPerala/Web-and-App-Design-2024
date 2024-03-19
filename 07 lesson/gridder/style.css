@@ -3,11 +3,13 @@
 
 :root {
     --border-radius: 0.6rem;
+    --dark-text: rgb(40, 40, 40);
+    --primary-color: #266bff;
 }
 
 /* CSS reset */
 
-html, body, div, span, applet, object,
+html, body, button, div, span, applet, object,
 	iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 	pre, a, abbr, acronym, address, big, cite,
 	code, del, dfn, em, img, ins, kbd, q, s, samp,
@@ -38,6 +40,7 @@ html, body, div, span, applet, object,
     h2 {
         font-size: 2rem;
         margin: 4rem 0;
+        margin-bottom: 2rem;
     }
 
     p {
@@ -82,28 +85,49 @@ header {
 #titleAndTagline {
     grid-column-start: 4;
     grid-column-end: 10;
-    background-color: rgba(0, 0, 0, 0.524);
+    background-color: var(--primary-color);
     text-align: center;
    
 }
 
 section {
     background-color: white;
-    color: rgb(40, 40, 40);
+    color: var(--dark-text);
     min-height: 10vh;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 2px; 
+    grid-column: 3 / 11; /* Shorthand for grid-column-start: 3 and grid-column-end: 11 */
+}
+
+section img {
+    grid-column: span 8;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: var(--border-radius);
 }
 
 .elevatorPitch{
-    grid-column: 3 / 11; /* Shorthand for grid-column-start: 3 and grid-column-end: 11 */
     margin-top: -10vh;
     border-radius: var(--border-radius);
 }
 
 .textContainer {
     grid-column: 2 / 8;
+}
+
+footer {
+
+    min-height: 20vh;
+    grid-column: span 12;
+    margin: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    
 }
 
 /* Buttons */
