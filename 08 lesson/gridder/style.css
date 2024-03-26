@@ -1,0 +1,258 @@
+
+/*
+Theme Name: Gridder
+Theme URI: https://wordpress.org/themes/twentytwentytwo/
+Author: Antti Perälä
+Author URI: https://wordpress.org/
+Description: Built on a solidly designed foundation, Twenty Twenty-Two embraces the idea that everyone deserves a truly unique website. The theme’s subtle styles are inspired by the diversity and versatility of birds: its typography is lightweight yet strong, its color palette is drawn from nature, and its layout elements sit gently on the page. The true richness of Twenty Twenty-Two lies in its opportunity for customization. The theme is built to take advantage of the Site Editor features introduced in WordPress 5.9, which means that colors, typography, and the layout of every single page on your site can be customized to suit your vision. It also includes dozens of block patterns, opening the door to a wide range of professionally designed layouts in just a few clicks. Whether you’re building a single-page website, a blog, a business website, or a portfolio, Twenty Twenty-Two will help you create a site that is uniquely yours.
+Requires at least: 5.9
+Tested up to: 6.4
+Requires PHP: 5.6
+Version: 1.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gridder
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, style-variations, wide-blocks, block-styles, accessibility-ready, blog, portfolio, news
+
+Twenty Twenty-Two WordPress Theme, (C) 2021 WordPress.org
+Twenty Twenty-Two is distributed under the terms of the GNU GPL.
+*/
+
+
+/* CSS Variables */
+
+:root {
+    --border-radius: 0.6rem;
+    --dark-text: rgb(40, 40, 40);
+    --primary-color: #266bff;
+}
+
+/* CSS reset */
+
+html, body, button, div, span, applet, object,
+	iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+	pre, a, abbr, acronym, address, big, cite,
+	code, del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var, b,
+	u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+	form, label, legend, table, caption, tbody,
+	tfoot, thead, tr, th, td, article, aside,
+	canvas, details, embed, figure, figcaption,
+	footer, header, hgroup, menu, nav, output, ruby,
+	section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+    body {
+        color: white;
+        font-family: 'SairaSemiCondensedLight';
+    }
+
+    h1 {
+        font-size: 4rem;     
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 4rem 0;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    p {
+        margin: 2rem 0;
+    }
+
+    @font-face {
+        font-family: 'SairaSemiCondensedExtraBold';
+        src: url('fonts/SairaSemiCondensed-ExtraBold.ttf');
+    }
+
+    @font-face {
+        font-family: 'SairaSemiCondensedLight';
+        src: url('fonts/SairaSemiCondensed-Light.ttf');
+    }
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 2px;  
+    min-height: 90vh;
+}
+
+header {
+    background-color: rgb(9 6 65 / 57%);
+    grid-column: span 12;
+    background-image: url(img/crypto_bg-transformed.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 76vh;
+    background-blend-mode: darken;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.branding {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 2px;
+    align-items: center;
+    height: 100%;
+}
+
+#titleAndTagline {
+    grid-column-start: 4;
+    grid-column-end: 10;
+    background-color: var(--primary-color);
+    text-align: center;
+    margin-top: -20vh;
+   
+}
+
+section {
+    background-color: white;
+    color: var(--dark-text);
+    min-height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2px; 
+    grid-column: 3 / 11; /* Shorthand for grid-column-start: 3 and grid-column-end: 11 */
+    text-align: justify;
+}
+
+section img {
+    grid-column: span 8;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.elevatorPitch{
+    margin-top: -10vh;
+    border-radius: var(--border-radius);
+}
+
+.textContainer {
+    grid-column: 2 / 8;
+}
+
+footer {
+
+    min-height: 20vh;
+    grid-column: span 12;
+    margin: 4rem 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
+
+    
+}
+
+.left{
+    grid-column: 4 / 7;
+}
+
+.right{
+    grid-column: 7 / 10;
+    text-align: right;
+}
+
+/* Buttons */
+
+button.recommended {
+    min-width: 10rem;
+    padding: 0.7rem;
+    background-color: white;
+    margin: 1rem;
+    border-radius: 0.3rem;
+}
+
+button.not-recommended {
+    min-width: 10rem;
+    padding: 0.7rem;
+    margin: 1rem;
+    border: 1px white solid;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: transparent;
+}
+
+/* Mobile styles */
+
+@media only screen and (max-width: 768px) {
+
+    /* body {
+        background-color: blue;
+    } */
+
+    #titleAndTagline {
+        grid-column: 2 / 12;
+    }
+
+    section {
+        grid-column: 2 / 12 ;
+    }
+
+    .left {
+        grid-column: 3 / 7;
+    }
+    
+    .right {
+        grid-column: 7 /11;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+      /* body {
+        background-color: red;
+      } */
+
+      header {
+        min-height: 60vh;
+      }
+
+
+      h1  {
+        font-size: 4rem;
+      }
+
+        nav ul {
+            display: inline;
+      }
+
+      #titleAndTagline {
+          grid-column: 2 / 12;
+          margin-top: -20vh;
+      }
+
+      .elevatorPitch {
+        margin-top: 0;
+      }
+    
+       section {
+           grid-column: span 12 ;
+      }
+
+    }
