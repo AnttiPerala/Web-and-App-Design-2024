@@ -16,6 +16,15 @@
             padding: 1rem;
             font-size: 1.2rem;
         }
+
+        table.highScoreTable {
+            border-collapse: collapse;
+        }
+
+      th, td {
+        border: 1px solid gray;
+        padding: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -25,10 +34,10 @@
         <p id="timePassed">Time passed: </p>
     </div>
 
-        <?xml version="1.0" encoding="UTF-8"?>
+    
     <!-- Created with Inkscape (http://www.inkscape.org/) -->
     <svg version="1.1" viewBox="0 0 1920 920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <image width="1920" height="920" preserveAspectRatio="none" xlink:href="findfivemistakes.jpg"/>
+    <image width="1920" height="920" preserveAspectRatio="none" xlink:href="<?php bloginfo('template_url'); ?>/findfivemistakes.jpg"/>
     <path class="hotspot1" d="m276.9 228.7c5.463-5.932 15.64-6.222 22.35-2.423 8.405 3.901 14.21 12.38 13.84 21.75 1.234 11.68-12.14 19.27-22.48 16.66-10.22 0.074-16.6-9.199-18.41-18.27-1.524-5.933 0.8234-13.45 4.7-17.73z" style="fill-opacity:0;stroke-width:3.8;stroke:#d34e28"/>
     <path class="hotspot1" d="m1206 225.1c26.9-29.87 74.92 7.959 48.1 38.68-21.68 26.45-63.92-0.9792-52.55-32.03l1.36-3.219z" style="fill-opacity:0;stroke-width:3.8;stroke:#d34e28"/>
     <path class="hotspot2" d="m824.5 156.8c23.67-20.94 60.85-30.75 90.01-15.25 30.86 9.33 41.38 42.55 38.81 71.79 0.4436 30.51-37.02 38.77-61.07 42.63-27.25-1.125-58.93-6.753-79.86-24.4-5.772-22.59-16.07-58.02 8.933-72.46z" style="fill-opacity:0;stroke-width:3.8;stroke:#d34e28"/>
@@ -40,6 +49,33 @@
     <path class="hotspot5" d="m473.2 416.1c15.88-23.42 49.63-24.11 74.83-21.19 28.93 11.54 32.65 63.45 0.4245 73.37-23.12 6.78-56.41 10.24-71.57-12.92-5.252-12.22-3.598-26.28-3.679-39.27z" style="fill-opacity:0;stroke-width:3.8;stroke:#d34e28"/>
     <path class="hotspot5" d="m1400 406.4c20.73-15.91 50.14-23.03 75.43-17.09 23.03 17.46 27.53 62.77 0.7532 79.4-27.71 19.33-76.02 9.524-79.91-28.57-2.063-11.26-1.137-23.28 3.731-33.74z" style="fill-opacity:0;stroke-width:3.8;stroke:#d34e28"/>
     </svg>
+
+    <?php 
+    
+        global $wpdb;
+        $rowResults = $wpdb->get_results("SELECT playerName, playerTime FROM highscores ORDER BY playerTime ASC");
+    ?>
+
+    <table class="highScoreTable">
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Time</th>
+        </tr>
+        <?php
+        $i = 1;
+        foreach ($rowResults as $row){
+            ?>
+        <tr>
+            <td><?php echo $i ?></td>
+            <td><?php echo $row->playerName; ?></td>
+            <td><?php echo $row->playerTime; ?></td>
+        </tr>
+        <?php
+        $i++; } ?>
+
+
+    </table>
 
     <script>
 
