@@ -15,6 +15,7 @@
             background-color: coral;
             padding: 1rem;
             font-size: 1.2rem;
+            align-items: center;
         }
 
         table.highScoreTable {
@@ -25,6 +26,10 @@
         border: 1px solid gray;
         padding: 0.5rem;
         }
+
+        #sendHighScore{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -32,11 +37,17 @@
     <div id="hud">
         <p id="foundMistakes">Found mistakes: 0 / 5</p>
         <p id="timePassed">Time passed: </p>
+        <form id="sendHighScore" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+            <input type="hidden" name="action" value="storeScore">
+            <input type="hidden" name="playerTime" id="playerTime">
+            <input type="text" name="playerName" required placeholder="Your name">
+            <input type="submit" value="Submit High Score">
+    </form>
     </div>
 
     
     <!-- Created with Inkscape (http://www.inkscape.org/) -->
-    <svg version="1.1" viewBox="0 0 1920 920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg id="game" version="1.1" viewBox="0 0 1920 920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <image width="1920" height="920" preserveAspectRatio="none" xlink:href="<?php bloginfo('template_url'); ?>/findfivemistakes.jpg"/>
     <path class="hotspot1" d="m276.9 228.7c5.463-5.932 15.64-6.222 22.35-2.423 8.405 3.901 14.21 12.38 13.84 21.75 1.234 11.68-12.14 19.27-22.48 16.66-10.22 0.074-16.6-9.199-18.41-18.27-1.524-5.933 0.8234-13.45 4.7-17.73z" style="fill-opacity:0;stroke-width:3.8;stroke:#d34e28"/>
     <path class="hotspot1" d="m1206 225.1c26.9-29.87 74.92 7.959 48.1 38.68-21.68 26.45-63.92-0.9792-52.55-32.03l1.36-3.219z" style="fill-opacity:0;stroke-width:3.8;stroke:#d34e28"/>
@@ -77,6 +88,8 @@
 
     </table>
 
+   
+
     <script>
 
         let foundMistakes = 0;
@@ -90,6 +103,8 @@
             } else {
                
                 document.querySelector('#timePassed').textContent = 'You found all the mistakes! Congratulations! Your time was: '+ timePassed +'s';
+                document.getElementById('playerTime').value = timePassed;
+                document.getElementById('sendHighScore').style.display = 'block';
             }
 
             
@@ -100,7 +115,7 @@
             element.addEventListener('click', handleClick);       
         });
 
-        document.body.addEventListener('click', punish);
+        document.getElementById("game").addEventListener('click', punish);
 
         function punish(){
         
